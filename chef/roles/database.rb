@@ -1,6 +1,6 @@
 name "database"
 description "mysql recipes"
-run_list %w(mysql::client mysql::server php::module_mbstring php::module_gd php::module_mysql mike_phpmyadmin)
+run_list %w(mysql::client mysql::server mike_phpmyadmin)
 
 override_attributes(
   'mysql' => {
