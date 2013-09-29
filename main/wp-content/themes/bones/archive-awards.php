@@ -1,9 +1,17 @@
+<?php get_header(); ?>
 <div id="content">
-	fred
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div><?php the_title(); ?></div>
+	<?php $myPosts = new WP_Query( 'post_type=awards&meta_key=_cdgd_test_text&orderby=meta_value&order=ASC' ); ?>
+	<?php if ($myPosts->have_posts()) : while ($myPosts->have_posts()) : $myPosts->the_post(); ?>
+		<div>
+			<?php the_title(); ?>			
+			<?php echo get_post_meta( $post->ID, '_cdgd_test_text', true ); ?>
+		</div>		
 	<?php endwhile; ?>
 	
+	<?php else: ?>
+		foo
 	<?php endif; ?>
+	
+	<?php wp_reset_postdata(); ?>
 	
 </div>	
