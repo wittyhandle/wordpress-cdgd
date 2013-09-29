@@ -394,8 +394,8 @@ function cdgd_metaboxes( $meta_boxes ) {
 				'desc' => 'field description (optional)',
 				'id' => $prefix . 'test_text',
 				'type' => 'text'
-			),
-		),
+			)
+		)
 	);
 
 	return $meta_boxes;
