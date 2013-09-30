@@ -9,4 +9,11 @@ end
 link "#{node['wordpress']['dir']}/wp-content" do
   to "/wp-share"
   action :create
-end  
+end
+
+# provide the .htaccess file for Wordpress to use
+cookbook_file "#{node['wordpress']['dir']}/.htaccess" do
+  source ".htaccess"
+  mode 0666
+  action :create_if_missing
+end
