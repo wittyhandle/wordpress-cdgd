@@ -52,7 +52,7 @@ function custom_post_example() {
 	 	) /* end of options */
 	); /* end of register post type */
 	
-	register_post_type( 'awards',
+	register_post_type( 'award',
 	 	
 		array( 'labels' => array(
 			'name' => __( 'Awards', 'bonestheme' ), /* This is the Title of the Group */

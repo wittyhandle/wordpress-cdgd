@@ -5,7 +5,14 @@
 		<div>
 			<?php the_title(); ?>			
 			<?php echo get_post_meta( $post->ID, '_cdgd_test_text', true ); ?>
-		</div>		
+			
+			
+			
+			
+		</div>
+		
+		
+				
 	<?php endwhile; ?>
 	
 	<?php else: ?>
