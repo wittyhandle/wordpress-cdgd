@@ -67,9 +67,9 @@ if( !class_exists( 'kdMultipleFeaturedImages' ) ) {
             
             $this->post_meta_key= 'kd_'.$this->id.'_'.$this->post_type.'_id';
             
-            $this->nonce        = 'mfi-'.$this->args['id'].$this->args['post_type'];
+            $this->nonce        = 'mfi-'.$args['id'].$args['post_type'];
             
-            if( !current_theme_supports( 'post-thumbnails' ) ) {
+			if( !current_theme_supports( 'post-thumbnails' ) ) {
                 add_theme_support( 'post-thumbnails' );
             }
 
@@ -190,8 +190,8 @@ if( !class_exists( 'kdMultipleFeaturedImages' ) ) {
             elseif( isset( $_POST ) && count( $_POST ) ) {
                 $calling_id = $post->post_parent;
             }
-            
-            $calling_post = get_post( $calling_id );
+
+			$calling_post = get_post( $calling_id );
             
             if( is_null( $calling_post ) || $calling_post->post_type != $this->post_type ) {
                 return $form_fields;
@@ -210,7 +210,7 @@ if( !class_exists( 'kdMultipleFeaturedImages' ) ) {
             );
             
             $form_fields['MuFeaImg-'.$this->id.'-'.$this->post_type] = array(
-                'label' => $this->labels['name'],
+                'label' => $this->labels['name'] . ' Monkey',
                 'input' => 'html',
                 'html'  => $output
             );
