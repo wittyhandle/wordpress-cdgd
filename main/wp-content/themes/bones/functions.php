@@ -45,6 +45,20 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 */
 // require_once( 'library/translation/translation.php' ); // this comes turned off by default
 
+/************* WPAlchemy includes ****************/
+include_once 'metaboxes/setup.php';
+
+include_once 'metaboxes/simple-spec.php';
+ 
+//include_once 'metaboxes/full-spec.php';
+
+//include_once 'metaboxes/checkbox-spec.php';
+
+//include_once 'metaboxes/radio-spec.php';
+
+//include_once 'metaboxes/select-spec.php';
+
+
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
