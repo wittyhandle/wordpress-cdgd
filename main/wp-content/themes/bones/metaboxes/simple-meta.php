@@ -7,8 +7,10 @@
     <p>
         <?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value())); ?>
         <?php echo $wpalchemy_media_access->getButton(); ?>
-
-		<img src="<?php $mb->the_value(); ?>"/>
+						
+		<?php echo $wpalchemy_media_access->getIdField(array('class' => 'tout')); ?>
+		
+		<?php echo wp_get_attachment_image( 117, array(32, 32)); ?>
 
     </p>
  
@@ -26,10 +28,17 @@
 	
 	jQuery(function($)
 	{		
-		$.wpalchemy.bind('wpa_copy', function(the_clone) {
-
-			console.log('image added');
-
+		jQuery('input.tout').change(function()
+		{
+			jQuery.post(
+				'/wp-admin/admin-ajax.php',
+				{
+					action: 'myajax-submit'
+				},
+				function( response ) {
+					console.log(response);
+				}, 'json');
+			
 		});
 		
 	});

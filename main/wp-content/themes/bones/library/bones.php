@@ -163,7 +163,12 @@ function bones_scripts_and_styles() {
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
 		wp_enqueue_script( 'comment-reply' );
     }
-
+	
+	// scripts for ajax support
+	wp_enqueue_script( 'my-ajax-request', get_stylesheet_directory_uri() . '/library/js/ajax.js', array( 'jquery' ) );
+	//wp_localize_script( 'my-ajax-request', 'MyAjax', array( 'ajaxssurl' => admin_url( 'admin-ajax.php' ) ) );
+	
+	
     //adding scripts file in the footer
     wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
@@ -420,5 +425,27 @@ function cdgd_metaboxes( $meta_boxes ) {
 }
 
 add_filter( 'cmb_meta_boxes', 'cdgd_metaboxes' );
+
+add_action( 'wp_ajax_nopriv_myajax-submit', 'myajax_submit' );
+add_action( 'wp_ajax_myajax-submit', 'myajax_submit' );
+
+function myajax_submit() {
+	 
+	// generate the response
+	$response = '{
+	"employees": [
+	{ "firstName":"John" , "lastName":"Doe" }, 
+	{ "firstName":"Anna" , "lastName":"Smith" }, 
+	{ "firstName":"Peter" , "lastName":"Jones" }
+	]
+	}';
+ 
+	// response output
+	header( "Content-Type: application/json" );
+	echo $response;
+ 
+	// IMPORTANT: don't forget to "exit"
+	exit;
+}
 
 ?>
