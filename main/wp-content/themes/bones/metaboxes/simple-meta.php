@@ -11,6 +11,8 @@
 		<?php echo $wpalchemy_media_access->getIdField(array('class' => 'tout')); ?>
 		
 		<?php echo wp_get_attachment_image( 117, array(32, 32)); ?>
+		
+		<img>
 
     </p>
  
@@ -30,10 +32,13 @@
 	{		
 		jQuery('input.tout').change(function()
 		{
+			console.log('val ' + jQuery('input.tout').val());
 			jQuery.post(
 				'/wp-admin/admin-ajax.php',
 				{
-					action: 'myajax-submit'
+					action: 'thumbnail-spec',
+					media_id: jQuery('input.tout').val(),
+					dimension: 50
 				},
 				function( response ) {
 					console.log(response);

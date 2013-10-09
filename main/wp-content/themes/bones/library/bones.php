@@ -426,25 +426,16 @@ function cdgd_metaboxes( $meta_boxes ) {
 
 add_filter( 'cmb_meta_boxes', 'cdgd_metaboxes' );
 
-add_action( 'wp_ajax_nopriv_myajax-submit', 'myajax_submit' );
-add_action( 'wp_ajax_myajax-submit', 'myajax_submit' );
-
-function myajax_submit() {
-	 
-	// generate the response
-	$response = '{
-	"employees": [
-	{ "firstName":"John" , "lastName":"Doe" }, 
-	{ "firstName":"Anna" , "lastName":"Smith" }, 
-	{ "firstName":"Peter" , "lastName":"Jones" }
-	]
-	}';
- 
-	// response output
+add_action( 'wp_ajax_nopriv_thumbnail-spec', 'thumbnail_spec' );
+add_action( 'wp_ajax_thumbnail-spec', 'thumbnail_spec' );
+function thumbnail_spec()
+{	 
+	$mediaId = $_POST['media_id'];
+	$dimension = $_POST['dimension'];
+	
 	header( "Content-Type: application/json" );
-	echo $response;
+	echo json_encode(wp_get_attachment_image_src($mediaId, array($dimension, $dimension)));
  
-	// IMPORTANT: don't forget to "exit"
 	exit;
 }
 
