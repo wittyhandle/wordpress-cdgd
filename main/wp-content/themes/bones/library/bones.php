@@ -51,24 +51,6 @@ function bones_ahoy() {
     // cleaning up excerpt
     add_filter( 'excerpt_more', 'bones_excerpt_more' );
 
-	// playing with the multiple featured image plug-in
-	if( class_exists( 'kdMultipleFeaturedImages' ) ) {
-
-	        $args = array(
-	                'id' => 'featured-image-2',
-	                'post_type' => 'post',      // Set this to post or page
-	                'labels' => array(
-	                    'name'      => 'Featured image 2',
-	                    'set'       => 'Set featured image 2',
-	                    'remove'    => 'Remove featured image 2',
-	                    'use'       => 'Use as featured image 2',
-	                )
-	        );
-
-	        new kdMultipleFeaturedImages( $args );
-	}	
-
-
 } /* end bones ahoy */
 
 /*********************
