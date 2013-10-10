@@ -22,8 +22,7 @@ add_action( 'after_setup_theme', 'bones_ahoy', 16 );
 function bones_ahoy() {
 
     // launching operation cleanup
-    add_action( 'init', 'bones_head_cleanup' );
-	add_action( 'init', 'initialize_cmb_meta_boxes' );
+    add_action( 'init', 'bones_head_cleanup' );	
 
     // remove WP version from RSS
     add_filter( 'the_generator', 'bones_rss_version' );
@@ -87,11 +86,6 @@ function bones_head_cleanup() {
 
 } /* end bones head cleanup */
 
-function initialize_cmb_meta_boxes() {
-	if ( !class_exists( 'cmb_Meta_Box' ) ) {
-		require_once( 'metabox/init.php' );
-	}
-}
 // remove WP version from RSS
 function bones_rss_version() { return ''; }
 
@@ -379,34 +373,6 @@ function bones_get_the_author_posts_link() {
 	);
 	return $link;
 }
-
-/**********************
-CUSTOM METABOX LIBRARY
-**********************/
-function cdgd_metaboxes( $meta_boxes ) {
-	
-	$prefix = '_cdgd_'; // Prefix for all fields
-	$meta_boxes[] = array(
-		'id' => 'test_metabox',
-		'title' => 'Test Metabox',
-		'pages' => array('awards'),
-		'context' => 'normal',
-		'priority' => 'high',
-		'show_names' => true, // Show field names on the left
-		'fields' => array(
-			array(
-				'name' => 'Test Text',
-				'desc' => 'field description (optional)',
-				'id' => $prefix . 'test_text',
-				'type' => 'text'
-			)
-		)
-	);
-
-	return $meta_boxes;
-}
-
-add_filter( 'cmb_meta_boxes', 'cdgd_metaboxes' );
 
 add_action( 'wp_ajax_nopriv_thumbnail-spec', 'thumbnail_spec' );
 add_action( 'wp_ajax_thumbnail-spec', 'thumbnail_spec' );
