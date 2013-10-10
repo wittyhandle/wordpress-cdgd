@@ -8,10 +8,7 @@
         <?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value())); ?>
         <?php echo $wpalchemy_media_access->getButton(); ?>
 						
-		<?php echo $wpalchemy_media_access->getIdField(array('class' => 'tout')); ?>
-		
-		<?php echo wp_get_attachment_image( 117, array(32, 32)); ?>
-		
+		<?php echo $wpalchemy_media_access->getIdField(array('class' => 'tout')); ?>				
 		<img>
 
     </p>
@@ -30,8 +27,10 @@
 	
 	jQuery(function($)
 	{		
+		//<img width="32" height="27" src="http://localhost:1234/wp-content/uploads/2013/10/cdetorres_time_mobility_tout_01-150x129.png" class="attachment-32x32" alt="cdetorres_time_mobility_tout_01">
 		jQuery('input.tout').change(function()
 		{
+			var that = jQuery(this);
 			console.log('val ' + jQuery('input.tout').val());
 			jQuery.post(
 				'/wp-admin/admin-ajax.php',
@@ -41,7 +40,14 @@
 					dimension: 50
 				},
 				function( response ) {
+					
+					// render the img tag
 					console.log(response);
+					that.parent().find('img')
+						.attr('src', response[0])
+						.attr('width', response[1])
+						.attr('height', response[2]);
+					
 				}, 'json');
 			
 		});
