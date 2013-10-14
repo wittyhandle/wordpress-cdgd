@@ -4,14 +4,25 @@
     <?php $mb->the_field('imgurl'); ?>
     <?php $wpalchemy_media_access->setGroupName('nn')->setInsertButtonLabel('Insert'); ?>
  
-    <p>
+    <div>
         <?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value())); ?>
         <?php echo $wpalchemy_media_access->getButton(); ?>
 						
-		<?php echo $wpalchemy_media_access->getIdField(array('class' => 'tout')); ?>				
-		<img>
+		<?php echo $wpalchemy_media_access->getIdField(array('class' => 'tout', 'name' => '_custom_meta[hidden_attachment_id]')); ?>				
+		
+		<?php
+			$attachment_id = $mb->get_the_value('hidden_attachment_id');
+			if ( isset($attachment_id) )
+			{
+				echo wp_get_attachment_image( $attachment_id, array(50, 50), false, array('class' => 'cdgd-selected-thumbnail') );
+			}
+			else
+			{?>
+				<img class="cdgd-selected-thumbnail">
+			<?php }
+		?>
 
-    </p>
+    </div>
  
     <?php $mb->the_field('imgurl2'); ?>
     <?php $wpalchemy_media_access->setGroupName('nn2')->setInsertButtonLabel('Insert This')->setTab('gallery'); ?>
