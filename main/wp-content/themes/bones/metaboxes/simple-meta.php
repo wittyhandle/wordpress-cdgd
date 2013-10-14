@@ -40,12 +40,9 @@
 	
 	jQuery(function($)
 	{		
-		//<img width="32" height="27" src="http://localhost:1234/wp-content/uploads/2013/10/cdetorres_time_mobility_tout_01-150x129.png" class="attachment-32x32" alt="cdetorres_time_mobility_tout_01">
 		jQuery('body').on('change', 'input.tout', function()
-		//jQuery('input.tout').change(function()
 		{
 			var that = jQuery(this);
-			console.log('the id ' + that.attr('id'));
 			jQuery.post(
 				'/wp-admin/admin-ajax.php',
 				{
@@ -56,7 +53,6 @@
 				function( response ) {
 					
 					// render the img tag
-					console.log(response);
 					that.parent().find('img')
 						.attr('src', response[0])
 						.attr('width', response[1])
