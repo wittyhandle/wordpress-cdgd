@@ -25,7 +25,7 @@
 					$attachment_id = $mb->get_the_value();
 					if ( isset($attachment_id) )
 					{
-						echo wp_get_attachment_image( $attachment_id, array(75, 75), false, array('class' => 'cdgd-selected-thumbnail') );
+						echo wp_get_attachment_image($attachment_id, array(75, 75), false, array('class' => 'cdgd-selected-thumbnail', 'style' => 'display: block') );
 					}
 					else
 					{?>
