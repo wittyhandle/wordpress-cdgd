@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div id="content">
-	<?php $myPosts = new WP_Query( 'post_type=awards&meta_key=_cdgd_test_text&orderby=meta_value&order=ASC' ); ?>
+	<?php $myPosts = new WP_Query( 'post_type=project&meta_key=_cdgd_test_text&orderby=meta_value&order=ASC' ); ?>
 	<?php if ($myPosts->have_posts()) : while ($myPosts->have_posts()) : $myPosts->the_post(); ?>
 		<div>
 			<?php the_title(); ?>			

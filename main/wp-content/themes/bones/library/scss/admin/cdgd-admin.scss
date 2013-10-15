@@ -1,4 +1,22 @@
 /***** Custom styling *****/
 .cdgd-selected-thumbnail {
-	display: block;
+	display: none;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
 }
+
+#wpa_loop-heros .wpa_group {
+	border: 1px solid #ccc;
+	padding: 5px;
+	overflow: auto;
+}
+
+.wpa_loop-heros {
+	
+	p {
+		margin: 0 10px 10px 0;
+		float: left;				
+	}			
+}
+

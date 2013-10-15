@@ -52,33 +52,33 @@ function custom_post_example() {
 	 	) /* end of options */
 	); /* end of register post type */
 	
-	register_post_type( 'award',
+	register_post_type( 'project',
 	 	
 		array( 'labels' => array(
-			'name' => __( 'Awards', 'bonestheme' ), /* This is the Title of the Group */
-			'singular_name' => __( 'Award', 'bonestheme' ), /* This is the individual type */
-			'all_items' => __( 'Awards', 'bonestheme' ), /* the all items menu item */
-			'add_new' => __( 'Add New Award', 'bonestheme' ), /* The add new menu item */
-			'add_new_item' => __( 'Add New Award', 'bonestheme' ), /* Add New Display Title */
-			'edit' => __( 'Edit Award', 'bonestheme' ), /* Edit Dialog */
-			'edit_item' => __( 'Edit Awards', 'bonestheme' ), /* Edit Display Title */
-			'new_item' => __( 'New Award', 'bonestheme' ), /* New Display Title */
-			'view_item' => __( 'View Award', 'bonestheme' ), /* View Display Title */
-			'search_items' => __( 'Search Awards', 'bonestheme' ), /* Search Custom Type Title */ 
-			'not_found' =>  __( 'No awards added, poor Carl...', 'bonestheme' ), /* This displays if there are no entries yet */ 
-			'not_found_in_trash' => __( 'No awards in trash', 'bonestheme' ), /* This displays if there is nothing in the trash */
+			'name' => __( 'Projects', 'bonestheme' ), /* This is the Title of the Group */
+			'singular_name' => __( 'Project', 'bonestheme' ), /* This is the individual type */
+			'all_items' => __( 'Projects', 'bonestheme' ), /* the all items menu item */
+			'add_new' => __( 'Add New Project', 'bonestheme' ), /* The add new menu item */
+			'add_new_item' => __( 'Add New Project', 'bonestheme' ), /* Add New Display Title */
+			'edit' => __( 'Edit Project', 'bonestheme' ), /* Edit Dialog */
+			'edit_item' => __( 'Edit Projects', 'bonestheme' ), /* Edit Display Title */
+			'new_item' => __( 'New Project', 'bonestheme' ), /* New Display Title */
+			'view_item' => __( 'View Project', 'bonestheme' ), /* View Display Title */
+			'search_items' => __( 'Search Projects', 'bonestheme' ), /* Search Custom Type Title */ 
+			'not_found' =>  __( 'No projects added, Carl get to work you bum.', 'bonestheme' ), /* This displays if there are no entries yet */ 
+			'not_found_in_trash' => __( 'No projects in trash', 'bonestheme' ), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'Used for entering awards for all your good work', 'bonestheme' ), /* Custom Type Description */
+			'description' => __( 'Used for entering projects showcasing all your good work', 'bonestheme' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 4, /* this is what order you want it to appear in on the left hand side menu */ 
-			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png', /* the icon for the custom post type menu */
-			'rewrite'	=> array( 'slug' => 'award', 'with_front' => false ), /* you can specify its url slug */
-			'has_archive' => 'awards',
+			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/icons/application-wave.png', /* the icon for the custom post type menu */
+			'rewrite'	=> array( 'slug' => 'project', 'with_front' => false ), /* you can specify its url slug */
+			'has_archive' => 'projects',
 			'capability_type' => 'page',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */

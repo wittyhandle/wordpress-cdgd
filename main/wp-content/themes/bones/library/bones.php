@@ -375,17 +375,6 @@ function bones_get_the_author_posts_link() {
 }
 
 /*
- * Admin styling
- *
-*/
-add_action( 'admin_enqueue_scripts', 'load_admin_style' );
-function load_admin_style() {
-	wp_register_style( 'cdgd-admin', get_stylesheet_directory_uri() . '/library/css/admin/cdgd-admin.css', array(), '', 'all' );
-	wp_enqueue_style( 'cdgd-admin' );
-}	
-
-
-/*
  * Ajax-supporting functions
  *
 */

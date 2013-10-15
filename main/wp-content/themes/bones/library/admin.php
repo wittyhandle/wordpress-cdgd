@@ -31,13 +31,18 @@ function disable_default_dashboard_widgets() {
 
 	// removing plugin dashboard boxes
 	remove_meta_box( 'yoast_db_widget', 'dashboard', 'normal' );         // Yoast's SEO Plugin Widget
-
+	
 	/*
 	have more plugin widgets you'd like to remove?
 	share them with us so we can get a list of
 	the most commonly used. :D
 	https://github.com/eddiemachado/bones/issues
 	*/
+}
+
+add_action('do_meta_boxes', 'remove_thumbnail_box');
+function remove_thumbnail_box() {
+    remove_meta_box('postimagediv', 'project', 'side');
 }
 
 /*
@@ -98,6 +103,16 @@ add_action( 'wp_dashboard_setup', 'bones_custom_dashboard_widgets' );
 function bones_login_css() {
 	wp_enqueue_style( 'bones_login_css', get_template_directory_uri() . '/library/css/login.css', false );
 }
+
+/*
+ * Admin styling
+ *
+*/
+add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+function load_admin_style() {
+	wp_register_style( 'cdgd-admin', get_stylesheet_directory_uri() . '/library/css/admin/cdgd-admin.css', array(), '', 'all' );
+	wp_enqueue_style( 'cdgd-admin' );
+}	
 
 // changing the logo link from wordpress.org to your site
 function bones_login_url() {  return home_url(); }

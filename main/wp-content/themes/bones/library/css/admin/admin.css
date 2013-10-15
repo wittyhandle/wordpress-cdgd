@@ -1,3 +1,4 @@
 /***** Custom styling *****/
 .cdgd-selected-thumbnail {
-  display: block; }
+  display: none; 
+}
