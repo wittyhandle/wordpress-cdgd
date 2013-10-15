@@ -1,5 +1,9 @@
 <?php global $wpalchemy_media_access; ?>
 <div class="my_meta_control metabox">
+
+	<p id="save-warning">
+		Make sure to save the sort order!
+	</p>	
   
     <?php while($mb->have_fields_and_multi('heros')): ?>
 	<?php $mb->the_group_open(); ?>
@@ -33,13 +37,14 @@
 					<?php }
 				?>
 			</div>	
-
-	    
  
 	<?php $mb->the_group_close(); ?>
     <?php endwhile; ?>
 
-	<p class="toolbar"><a href="#" class="docopy-heros button">Add Hero</a><input type="submit" class="button" name="save" value="Save"/></p>
+	<p class="toolbar">
+		<a href="#" class="docopy-heros button">Add Hero</a>
+		<input type="submit" class="button" name="save" value="Save"/>
+	</p>
 
 </div>
 
@@ -71,7 +76,12 @@
 		});
 		
 		// make the hero media fields sortable
-		jQuery('#wpa_loop-heros').sortable();
+		jQuery('#wpa_loop-heros').sortable({
+			change: function()
+			{
+				jQuery('#save-warning').show();
+			}
+		});
 		
 	});
 	

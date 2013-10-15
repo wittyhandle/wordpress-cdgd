@@ -37,3 +37,12 @@ p.toolbar {
 		margin-left: 10px;
 	}	
 }
+
+#save-warning {
+	display: none;
+	color: #9F6000;
+	background-color: #FEEFB3;
+	font-weight: bold;
+	border: 1px solid;
+	padding: 5px;
+}
