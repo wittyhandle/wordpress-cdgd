@@ -1,15 +1,1 @@
-/***** Custom styling *****/
-.cdgd-selected-thumbnail {
-  display: none;
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc; }
-
-#wpa_loop-heros .wpa_group {
-  border: 1px solid #ccc;
-  padding: 5px;
-  overflow: auto; }
-
-.wpa_loop-heros p {
-  margin: 0 10px 10px 0;
-  float: left; }
+.cdgd-selected-thumbnail{display:none;padding:5px;margin-bottom:10px;border:1px solid #ccc}#wpa_loop-heros .wpa_group{border:1px dotted #ccc;padding:5px;overflow:auto}.wpa_loop-heros p{margin:0 10px 10px 0;float:left}.fields-block{width:90%;float:left}.thumbnail-block{width:10%;float:right}p.toolbar{clear:both}p.toolbar input[type="submit"]{margin-left:10px}

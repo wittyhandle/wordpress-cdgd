@@ -7,7 +7,7 @@
 		<?php $mb->the_field('hero'); ?>
 	    <?php $wpalchemy_media_access->setGroupName('hero-n' . $mb->get_the_index())->setInsertButtonLabel('Insert into Project'); ?>
 
-	    	<div style="width: 90%; float: left">
+	    	<div class="fields-block">
 				<p><?php echo $wpalchemy_media_access->getButton(array('label' => 'Select Hero Image')); ?></p>
 	        	<p class="remove"><a href="#" class="dodelete button">Remove</a></p>			
 			
@@ -20,7 +20,7 @@
 				'name' => $mb->get_the_name(), 
 				'value' => $mb->get_the_value())); ?>
 			
-			<div style="width: 10%; float: right">
+			<div class="thumbnail-block">
 				<?php
 					$attachment_id = $mb->get_the_value();
 					if ( isset($attachment_id) )
@@ -39,7 +39,7 @@
 	<?php $mb->the_group_close(); ?>
     <?php endwhile; ?>
 
-	<p style="clear: both"><a href="#" class="docopy-heros button">Add Hero</a><input type="submit" class="button" style="margin-left: 10px" name="save" value="Save"/></p>
+	<p class="toolbar"><a href="#" class="docopy-heros button">Add Hero</a><input type="submit" class="button" name="save" value="Save"/></p>
 
 </div>
 

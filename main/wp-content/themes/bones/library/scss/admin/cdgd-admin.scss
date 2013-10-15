@@ -7,7 +7,7 @@
 }
 
 #wpa_loop-heros .wpa_group {
-	border: 1px solid #ccc;
+	border: 1px dotted #ccc;
 	padding: 5px;
 	overflow: auto;
 }
@@ -20,3 +20,20 @@
 	}			
 }
 
+.fields-block {
+	width: 90%; 
+	float: left;
+} 
+
+.thumbnail-block {
+	width: 10%; 
+	float: right
+}
+
+p.toolbar {
+	clear: both;
+	
+	input[type="submit"] {
+		margin-left: 10px;
+	}	
+}
