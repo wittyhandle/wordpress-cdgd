@@ -79,7 +79,7 @@ function add_custom_post_types() {
 			'capability_type' => 'page',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'thumbnail')
+			'supports' => array( 'title')
 	 	) /* end of options */
 	); /* end of register post type */
 	
