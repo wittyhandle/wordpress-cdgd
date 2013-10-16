@@ -38,11 +38,21 @@ p.toolbar {
 	}	
 }
 
+$hu-padding: 5px;
+
 #save-warning {
 	display: none;
 	color: #9F6000;
 	background-color: #FEEFB3;
 	font-weight: bold;
 	border: 1px solid;
-	padding: 5px;
+	padding: $hu-padding;
+}
+
+.help {
+	padding: $hu-padding;
+	background-color: white;
+	color: #bbb;
+	border: 1px solid #ccc;
+	font-style: normal !important;
 }
