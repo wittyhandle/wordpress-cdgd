@@ -356,6 +356,16 @@ function bones_excerpt_more($more) {
 return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'bonestheme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
 }
 
+add_action('admin_head','check_post_type_and_remove_media_buttons');
+function check_post_type_and_remove_media_buttons()
+{
+	global $current_screen;
+	if( 'project' == $current_screen->post_type )
+	{
+		remove_action( 'media_buttons', 'media_buttons');
+	}
+}
+
 /*
  * This is a modified the_author_posts_link() which just returns the link.
  *

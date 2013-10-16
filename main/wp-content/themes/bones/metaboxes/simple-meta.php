@@ -6,6 +6,7 @@
 	</p>	
   
     <?php while($mb->have_fields_and_multi('heros')): ?>
+	
 	<?php $mb->the_group_open(); ?>
 	
 		<?php $mb->the_field('hero'); ?>
