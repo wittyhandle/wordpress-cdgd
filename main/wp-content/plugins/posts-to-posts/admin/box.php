@@ -29,7 +29,6 @@ class P2P_Box {
 
 		if ( self::$enqueued_scripts )
 			return;
-		echo plugins_url( 'box.css', __FILE__);
 		wp_enqueue_style( 'p2p-box', plugins_url( 'box.css', __FILE__ ),
 			array(), P2P_PLUGIN_VERSION );
 
