@@ -384,6 +384,74 @@ function bones_get_the_author_posts_link() {
 	return $link;
 }
 
+// will store a mapping of post IDs to their respective clients for viewing
+// in the project list page.
+$clientsForProjects = array();
+add_action('admin_menu', 'load_clients_for_projects');
+function load_clients_for_projects()
+{
+	$post_type = '';
+	if (isset($_REQUEST['post_type']))
+	{
+		$post_type = sanitize_key($_REQUEST['post_type']);
+	}
+	
+	// we only do this when showing the projects in the admin
+	if ($post_type == 'project')
+	{
+		global $clientsForProjects;
+		
+		// first let's collect all the project posts together
+		$my_query = new WP_Query( array('post_type' => 'project') );
+		p2p_type( 'projects_to_clients' )->each_connected( $my_query);
+
+		while ( $my_query->have_posts() ) : $my_query->the_post();
+			
+			global $post;
+			$projectId = $post->ID;
+			foreach( $post->connected as $post ) : setup_postdata( $post );
+				$clientsForProjects[$projectId] = $post->post_title;
+			endforeach;
+			
+			wp_reset_postdata();
+			
+		endwhile;	
+		
+	}
+}
+
+/*
+ * functions to add new columns in the admin
+ * 
+*/
+add_filter('manage_project_posts_columns', 'client_column_head');
+function client_column_head($defaults)
+{		
+	$defaults['client'] = 'Client';  
+	return $defaults;
+}
+
+
+add_action('manage_project_posts_custom_column', 'client_column_content', 10, 2);
+/*
+ * If rendering the data for the client column, look up the client
+ * value in the $clientsForProjects map built up from the load_clients_for_projects
+ * action.
+*/
+function client_column_content($column_name, $postId)
+{	
+	if ($column_name == 'client')
+	{
+		global $clientsForProjects;
+		if (isset($clientsForProjects[$postId])) 
+		{
+			echo $clientsForProjects[$postId];
+		}				
+	}
+}
+
+
+
 /*
  * Ajax-supporting functions
  *
