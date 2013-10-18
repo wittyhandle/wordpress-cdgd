@@ -384,6 +384,13 @@ function bones_get_the_author_posts_link() {
 	return $link;
 }
 
+function my_init_action_func() 
+{
+	_log("this is called!!! yay!");
+	wp_register_script( 'wpalchemy-custom-lib', get_stylesheet_directory_uri() . '/library/js/wpalchemy-custom-lib.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'wpalchemy-custom-lib' );
+}
+
 // will store a mapping of post IDs to their respective clients for viewing
 // in the project list page.
 $clientsForProjects = array();
@@ -391,7 +398,6 @@ add_action('admin_menu', 'load_clients_for_projects');
 function load_clients_for_projects()
 {
 	global $pagenow;		
-	_log($pagenow);
 	
 	$post_type = '';
 	if ($pagenow == 'edit.php' && isset($_REQUEST['post_type']))

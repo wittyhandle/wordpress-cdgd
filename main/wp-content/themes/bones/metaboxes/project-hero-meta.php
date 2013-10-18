@@ -27,7 +27,7 @@
 			
 			<?php $mb->the_field('attachment_id'); ?>
 			<?php echo $wpalchemy_media_access->getIdField(array(
-				'class' => 'tout', 
+				'class' => 'cdgd-media-id-field', 
 				'name' => $mb->get_the_name(), 
 				'value' => $mb->get_the_value())); ?>
 			
@@ -54,42 +54,3 @@
 	</p>
 
 </div>
-
-<script type="text/javascript">
-	
-	jQuery(function($)
-	{		
-		jQuery('body').on('change', 'input.tout', function()
-		{
-			var that = jQuery(this);
-			jQuery.post(
-				'/wp-admin/admin-ajax.php',
-				{
-					action: 'thumbnail-spec',
-					media_id: that.val(),
-					dimension: 75
-				},
-				function( response ) {
-					
-					// render the img tag
-					that.parent().find('img')
-						.attr('src', response[0])
-						.attr('width', response[1])
-						.attr('height', response[2])
-						.fadeIn(300);
-					
-				}, 'json');
-			
-		});
-		
-		// make the hero media fields sortable
-		jQuery('#wpa_loop-heros').sortable({
-			change: function()
-			{
-				jQuery('#save-warning').show();
-			}
-		});
-		
-	});
-	
-</script>
