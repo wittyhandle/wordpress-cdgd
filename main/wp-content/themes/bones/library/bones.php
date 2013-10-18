@@ -390,8 +390,11 @@ $clientsForProjects = array();
 add_action('admin_menu', 'load_clients_for_projects');
 function load_clients_for_projects()
 {
+	global $pagenow;		
+	_log($pagenow);
+	
 	$post_type = '';
-	if (isset($_REQUEST['post_type']))
+	if ($pagenow == 'edit.php' && isset($_REQUEST['post_type']))
 	{
 		$post_type = sanitize_key($_REQUEST['post_type']);
 	}
@@ -408,12 +411,15 @@ function load_clients_for_projects()
 		while ( $my_query->have_posts() ) : $my_query->the_post();
 			
 			global $post;
-			$projectId = $post->ID;
-			foreach( $post->connected as $post ) : setup_postdata( $post );
-				$clientsForProjects[$projectId] = $post->post_title;
-			endforeach;
-			
-			wp_reset_postdata();
+			if (isset($post->connected))
+			{
+				$projectId = $post->ID;
+				foreach( $post->connected as $post ) : setup_postdata( $post );
+					$clientsForProjects[$projectId] = $post->post_title;
+				endforeach;
+
+				wp_reset_postdata();
+			}
 			
 		endwhile;	
 		
