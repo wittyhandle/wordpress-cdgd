@@ -43,7 +43,9 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 /************* WPAlchemy includes ****************/
 include_once 'metaboxes/setup.php';
 
+include_once 'metaboxes/project-slide-spec.php';
 include_once 'metaboxes/project-hero-spec.php';
+
  
 //include_once 'metaboxes/full-spec.php';
 
