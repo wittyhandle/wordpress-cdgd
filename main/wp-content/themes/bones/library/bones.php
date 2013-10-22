@@ -360,10 +360,23 @@ add_action('admin_head','check_post_type_and_remove_media_buttons');
 function check_post_type_and_remove_media_buttons()
 {
 	global $current_screen;
-	if( 'project' == $current_screen->post_type )
+	$type = $current_screen->post_type;
+	if( 'project' ==  $type || 'tout' ==  $type)
 	{
 		remove_action( 'media_buttons', 'media_buttons');
 	}
+}
+
+add_filter( 'enter_title_here', 'change_default_title' );
+function change_default_title( $title )
+{ 
+    $screen = get_current_screen();
+    if ( 'tout' == $screen->post_type )
+	{
+        $title = 'Optional tout title (project title will be used if blank)';
+    }
+ 
+    return $title;
 }
 
 /*
@@ -446,7 +459,9 @@ function client_column_head($defaults)
 	return $defaults;
 }
 
-
+/*
+* Custom column settings
+*/
 add_action('manage_project_posts_custom_column', 'client_column_content', 10, 2);
 /*
  * If rendering the data for the client column, look up the client
