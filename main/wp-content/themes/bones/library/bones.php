@@ -401,10 +401,16 @@ function bones_get_the_author_posts_link() {
 * Loads the javascript used for supporting the custom wpalchemy-based metaboxes for media uploads on the edit-project
 * page.
 */
-function my_init_action_func() 
+function load_wpa_project_lib() 
 {
-	wp_register_script( 'wpalchemy-custom-lib', get_stylesheet_directory_uri() . '/library/js/wpalchemy-custom-lib.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'wpalchemy-custom-lib' );
+	wp_register_script( 'wpalchemy-project-lib', get_stylesheet_directory_uri() . '/library/js/wpalchemy-project-lib.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'wpalchemy-project-lib' );
+}
+
+function load_wpa_tout_lib() 
+{
+	wp_register_script( 'wpalchemy-tout-lib', get_stylesheet_directory_uri() . '/library/js/wpalchemy-tout-lib.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'wpalchemy-tout-lib' );
 }
 
 // will store a mapping of post IDs to their respective clients for viewing

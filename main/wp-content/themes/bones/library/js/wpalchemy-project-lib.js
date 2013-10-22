@@ -1,6 +1,5 @@
 jQuery(function($)
 {		
-	console.log('called');
 	jQuery('body').on('change', 'input.cdgd-media-id-field', function()
 	{
 		var that = jQuery(this);

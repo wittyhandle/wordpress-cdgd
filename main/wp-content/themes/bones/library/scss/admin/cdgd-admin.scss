@@ -59,8 +59,15 @@ $hu-padding: 5px;
 
 .cdgd-tout-mb {
 
-	label {
-		margin-left: 0 !important;
+	#faux-desc {
+		width: 178px;
+		//height: 80px;
+		border: 1px solid #999;
+		margin: 0 auto;
+		font-size: 13px;
+		//padding: 4px;
+		background-color: #dff2bf;
+		//background-color: #ffbaba;
 	}
 
 }
