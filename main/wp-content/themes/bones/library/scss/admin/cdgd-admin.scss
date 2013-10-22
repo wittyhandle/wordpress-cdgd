@@ -61,13 +61,15 @@ $hu-padding: 5px;
 
 	#faux-desc {
 		width: 178px;
-		//height: 80px;
 		border: 1px solid #999;
 		margin: 0 auto;
 		font-size: 13px;
-		//padding: 4px;
-		background-color: #dff2bf;
-		//background-color: #ffbaba;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 16px;	
+		color: #a0a0a0;
+		display: none;
+		font-family: 'NHaasGroteskTXStd-55Rg';
 	}
 
 }
