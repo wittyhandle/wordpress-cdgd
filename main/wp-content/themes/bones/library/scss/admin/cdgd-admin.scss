@@ -52,7 +52,15 @@ $hu-padding: 5px;
 .help {
 	padding: $hu-padding;
 	background-color: white;
-	color: #bbb;
+	color: #999;
 	border: 1px solid #ccc;
 	font-style: normal !important;
+}
+
+.cdgd-tout-mb {
+
+	label {
+		margin-left: 0 !important;
+	}
+
 }
