@@ -465,8 +465,28 @@ function client_column_content($column_name, $postId)
 	}
 }
 
-
-
+function example_contextual_help( $contextual_help, $screen_id, $screen ) 
+{    
+	switch( $screen_id ) 
+	{
+        case 'tout' :
+            $contextual_help .= '<p>';
+            $contextual_help .= '<strong>Title</strong> - Enter an optional title or leave it empty and use the associated project\'s title';
+            $contextual_help .= '</p>';
+            $contextual_help .= '<p>';
+            $contextual_help .= '<strong>Description</strong> - Enter a description for the tout in the rich-text editor';
+            $contextual_help .= '</p>';
+            break;
+        case 'my_plugin_page_2' :
+            $contextual_help .= '<p>';
+            $contextual_help = __( 'Your text here.' );
+            $contextual_help .= '</p>';
+            break;
+    }
+    
+	return $contextual_help;
+}
+add_filter('contextual_help', 'example_contextual_help', 10, 3);
 /*
  * Ajax-supporting functions
  *
