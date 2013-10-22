@@ -109,9 +109,10 @@ function bones_login_css() {
  *
 */
 add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+add_action( 'admin_enqueue_scripts', 'load_webfonts' );
 function load_admin_style() {
 	wp_register_style( 'cdgd-admin', get_stylesheet_directory_uri() . '/library/css/admin/cdgd-admin.css', array(), '', 'all' );
-	wp_enqueue_style( 'cdgd-admin' );
+	wp_enqueue_style( 'cdgd-admin' );		
 }	
 
 // changing the logo link from wordpress.org to your site

@@ -163,7 +163,10 @@ function bones_scripts_and_styles() {
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'bones-js' );
 
+	load_webfonts();
+
   }
+
 }
 
 /*********************
@@ -395,6 +398,12 @@ function bones_get_the_author_posts_link() {
 		get_the_author()
 	);
 	return $link;
+}
+
+function load_webfonts()
+{
+	wp_register_style( 'webfont', get_stylesheet_directory_uri() . '/library/css/nhaasgrotesk.css', array(), '' );
+    wp_enqueue_style( 'webfont' );
 }
 
 /**
