@@ -1,5 +1,5 @@
 <?php global $wpalchemy_media_access; ?>
-<div class="my_meta_control metabox">
+<div class="my_meta_control">
 
 	<p class="help">
 		Select existing assets or upload new ones by clicking the <strong>Select Slide Image</strong> button. Click the Add Slide

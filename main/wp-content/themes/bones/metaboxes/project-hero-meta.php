@@ -1,8 +1,8 @@
 <?php global $wpalchemy_media_access; ?>
-<div class="my_meta_control metabox">
+<div class="my_meta_control">
 
 	<p class="help">
-		Select existing assets or upload new ones by clicking the Select Hero Image button. Click the Add Hero
+		Select existing assets or upload new ones by clicking the <strong>Select Hero Image</strong> button. Click the Add Hero
 		button to add new hero images to the project. Click the Remove button to remove hero images. To re-order hero
 		images, drag from the empty space within a hero image row and drop under or over another image.
 	</p>
