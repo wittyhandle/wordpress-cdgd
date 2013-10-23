@@ -108,11 +108,15 @@ function bones_login_css() {
  * Admin styling
  *
 */
-add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+add_action( 'admin_enqueue_scripts', 'load_admin_scripts_and_style' );
 add_action( 'admin_enqueue_scripts', 'load_webfonts' );
-function load_admin_style() {
+function load_admin_scripts_and_style() 
+{
 	wp_register_style( 'cdgd-admin', get_stylesheet_directory_uri() . '/library/css/admin/cdgd-admin.css', array(), '', 'all' );
-	wp_enqueue_style( 'cdgd-admin' );		
+	wp_enqueue_style( 'cdgd-admin' );
+	
+	wp_register_script( 'cdgd-scripts', get_stylesheet_directory_uri() . '/library/js/admin/cdgd-scripts.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'cdgd-scripts' );
 }	
 
 // changing the logo link from wordpress.org to your site
