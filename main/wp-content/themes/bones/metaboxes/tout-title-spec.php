@@ -8,5 +8,5 @@ $tout_title_metabox = $simple_mb = new WPAlchemy_MetaBox(array
 	'types' => array('tout'),
 	'lock' => WPALCHEMY_LOCK_AFTER_POST_TITLE,
 	'context' => 'advanced',
-	'priority' => 'high'
+	'priority' => 'low'
 ));

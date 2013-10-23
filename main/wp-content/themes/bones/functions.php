@@ -45,8 +45,8 @@ include_once 'metaboxes/setup.php';
 
 include_once 'metaboxes/project-slide-spec.php';
 include_once 'metaboxes/project-hero-spec.php';
-include_once 'metaboxes/tout-spec.php';
 include_once 'metaboxes/tout-title-spec.php';
+include_once 'metaboxes/tout-spec.php';
 
  
 //include_once 'metaboxes/full-spec.php';

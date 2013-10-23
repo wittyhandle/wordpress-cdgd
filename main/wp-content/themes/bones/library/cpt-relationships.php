@@ -26,7 +26,7 @@ function my_connection_types()
 		'cardinality' => 'many-to-one',
 		'admin_box' => array(
 			'show' => 'from',
-			'context' => 'side'
+			'context' => 'advanced'
 		),
 		'title' => array(
 			'from' => 'Select Project'
