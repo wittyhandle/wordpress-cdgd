@@ -8,5 +8,5 @@ $tout_title_metabox = $simple_mb = new WPAlchemy_MetaBox(array
 	'init_action' => 'load_wpa_tout_lib',
 	'types' => array('tout'),
 	'context' => 'side',
-	'priority' => 'low'
+	'priority' => 'core'
 ));
