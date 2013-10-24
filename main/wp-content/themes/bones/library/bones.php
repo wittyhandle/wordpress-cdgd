@@ -467,8 +467,8 @@ function load_clients_for_projects()
  * functions to add new columns in the admin
  * 
 */
-add_filter('manage_project_posts_columns', 'client_column_head');
-function client_column_head($defaults)
+add_filter('manage_project_posts_columns', 'add_client_column');
+function add_client_column($defaults)
 {		
 	$defaults['client'] = 'Client';  
 	return $defaults;
@@ -495,6 +495,45 @@ function client_column_content($column_name, $postId)
 	}
 }
 
+add_filter('manage_tout_posts_columns', 'custom_title_content');
+function custom_title_content($defaults)
+{
+	return array(
+	        'cb' => '<input type="checkbox" />',
+	        'project_title' => __('Project Title'),
+			'title' => __('Title'),
+			'thumbnail' => __('Thumbnail')
+	    );
+}
+
+add_action('manage_tout_posts_custom_column', 'tout_column_content', 10, 2);
+function tout_column_content($column_name, $postId)
+{	
+	if ($column_name == 'project_title')
+	{
+		$post = get_post($postId);
+		$connected = new WP_Query( array(
+		  'connected_type' => 'touts_to_projects',
+		  'connected_items' => $post,
+		  'nopaging' => true,
+		) );				
+		
+		if ( $connected->have_posts() )
+		{
+			$connected->the_post();
+			global $post;
+			the_title();
+			wp_reset_postdata();
+		}
+		else
+		{
+			_log('not found');
+		}
+			
+	}
+}
+
+add_filter('contextual_help', 'example_contextual_help', 10, 3);
 function example_contextual_help( $contextual_help, $screen_id, $screen ) 
 {    
 	switch( $screen_id ) 
@@ -516,7 +555,7 @@ function example_contextual_help( $contextual_help, $screen_id, $screen )
     
 	return $contextual_help;
 }
-add_filter('contextual_help', 'example_contextual_help', 10, 3);
+
 /*
  * Ajax-supporting functions
  *
