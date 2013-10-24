@@ -73,3 +73,16 @@ $hu-padding: 5px;
 	}
 
 }
+
+.single-media {
+	overflow: auto; 
+	border: 1px dotted #ccc; 
+	padding: 5px;
+	
+	.fields-block {
+		a {
+			margin-bottom: 10px;
+		}
+	}
+	
+}
