@@ -49,7 +49,7 @@
     <?php endwhile; ?>
 
 	<p class="toolbar">
-		<a href="#" class="docopy-heros button">Add Slide</a>
+		<a href="#" class="docopy-slides button">Add Slide</a>
 		<input type="submit" class="button" name="save" value="Save Order"/>
 	</p>
 
