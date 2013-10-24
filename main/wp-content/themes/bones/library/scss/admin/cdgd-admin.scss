@@ -6,13 +6,17 @@
 	border: 1px solid #ccc;
 }
 
-#wpa_loop-heros .wpa_group {
-	border: 1px dotted #ccc;
-	padding: 5px;
-	overflow: auto;
+#wpa_loop-heros, #wpa_loop-slides {
+
+	.wpa_group {
+		border: 1px dotted #ccc;
+		padding: 5px;
+		overflow: auto;
+	}
+
 }
 
-.wpa_loop-heros {
+.wpa_loop-heros, .wpa_loop-slides {
 	
 	p {
 		margin: 0 10px 10px 0;

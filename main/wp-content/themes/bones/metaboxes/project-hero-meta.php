@@ -50,7 +50,7 @@
 
 	<p class="toolbar">
 		<a href="#" class="docopy-heros button">Add Hero</a>
-		<input type="submit" class="button" name="save" value="Save"/>
+		<input type="submit" class="button" name="save" value="Save Order"/>
 	</p>
 
 </div>
