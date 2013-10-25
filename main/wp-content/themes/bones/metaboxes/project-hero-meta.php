@@ -11,8 +11,7 @@
 		Make sure to save the sort order!
 	</p>	
   
-    <?php while($mb->have_fields_and_multi('heros')): ?>
-	
+    <?php while($mb->have_fields_and_multi('heros')): ?>	
 	<?php $mb->the_group_open(); ?>
 	
 		<?php $mb->the_field('hero'); ?>
@@ -22,7 +21,20 @@
 				<p><?php echo $wpalchemy_media_access->getButton(array('label' => 'Select Hero Image')); ?></p>
 	        	<p class="remove"><a href="#" class="dodelete button">Remove</a></p>			
 			
-				<?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value())); ?>	        
+				<p class="image-label"><?php 
+					$image_path = $mb->get_the_value();
+					if (empty($image_path))
+					{
+						echo 'No Image Selected';
+					}
+					else
+					{
+						$last_slash = strrpos($image_path, '/');
+						$image = substr($image_path, $last_slash + 1);
+						echo $image;
+					}
+					
+				?></p>
 			</div>
 			
 			<?php $mb->the_field('attachment_id'); ?>
