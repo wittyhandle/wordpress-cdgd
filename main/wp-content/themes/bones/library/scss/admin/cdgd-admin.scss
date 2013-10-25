@@ -12,6 +12,7 @@
 		border: 1px dotted #ccc;
 		padding: 5px;
 		overflow: auto;
+		margin-bottom: 20px;
 	}
 
 }
@@ -21,7 +22,15 @@
 	p {
 		margin: 0 10px 10px 0;
 		float: left;				
-	}			
+	}
+	
+}
+
+p.image-label {
+	clear: both;
+	font-weight: bold;
+	font-size: 16px;
+	margin: 1em 0;
 }
 
 .fields-block {
