@@ -31,4 +31,12 @@ jQuery(function($)
 		}
 	});
 	
+	// make the slide media fields sortable
+	jQuery('#wpa_loop-slides').sortable({
+		change: function()
+		{
+			jQuery('#save-warning').show();
+		}
+	});
+	
 });
