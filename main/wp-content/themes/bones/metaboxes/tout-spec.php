@@ -3,7 +3,7 @@
 $tout_metabox = $simple_mb = new WPAlchemy_MetaBox(array
 (
 	'id' => '_tout_meta',
-	'title' => 'Description Length Validation',
+	'hide_title' => true,
 	'template' => get_stylesheet_directory() . '/metaboxes/tout-meta.php',
 	'init_action' => 'load_wpa_tout_lib',
 	'types' => array('tout'),
