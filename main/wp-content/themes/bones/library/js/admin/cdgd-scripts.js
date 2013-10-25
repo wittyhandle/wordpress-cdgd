@@ -1,6 +1,6 @@
 jQuery(function($)
 {		
-	if (typeof P2PAdmin != 'undefined')
+	if (typeof P2PAdmin != 'undefined' && typeof P2PAdmin.boxes['touts_to_projects'] != 'undefined')
 	{
 		P2PAdmin.boxes['touts_to_projects'].connections.on('create', function() 
 		{
