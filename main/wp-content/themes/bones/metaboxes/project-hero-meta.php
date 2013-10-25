@@ -6,21 +6,21 @@
 		button to add new hero images to the project. Click the Remove button to remove hero images. To re-order hero
 		images, drag from the empty space within a hero image row and drop under or over another image.
 	</p>
-	
+
 	<p id="save-warning">
 		Make sure to save the sort order!
-	</p>	
-  
-    <?php while($mb->have_fields_and_multi('heros')): ?>	
-	<?php $mb->the_group_open(); ?>
-	
-		<?php $mb->the_field('hero'); ?>
-	    <?php $wpalchemy_media_access->setGroupName('hero-n' . $mb->get_the_index())->setInsertButtonLabel('Insert into Project'); ?>
+	</p>
 
-	    	<div class="fields-block">
+	<?php while($mb->have_fields_and_multi('heros')): ?>
+	<?php $mb->the_group_open(); ?>
+
+		<?php $mb->the_field('hero'); ?>
+		<?php $wpalchemy_media_access->setGroupName('hero-n' . $mb->get_the_index())->setInsertButtonLabel('Insert into Project'); ?>
+
+			<div class="fields-block">
 				<p><?php echo $wpalchemy_media_access->getButton(array('label' => 'Select Hero Image')); ?></p>
-	        	<p class="remove"><a href="#" class="dodelete button">Remove</a></p>			
-			
+				<p class="remove"><a href="#" class="dodelete button">Remove</a></p>
+
 				<p class="image-label"><?php 
 					$image_path = $mb->get_the_value();
 					if (empty($image_path))
@@ -33,16 +33,16 @@
 						$image = substr($image_path, $last_slash + 1);
 						echo $image;
 					}
-					
+
 				?></p>
 			</div>
-			
+
 			<?php $mb->the_field('attachment_id'); ?>
 			<?php echo $wpalchemy_media_access->getIdField(array(
 				'class' => 'cdgd-media-id-field', 
 				'name' => $mb->get_the_name(), 
 				'value' => $mb->get_the_value())); ?>
-			
+
 			<div class="thumbnail-block">
 				<?php
 					$attachment_id = $mb->get_the_value();
@@ -56,9 +56,9 @@
 					<?php }
 				?>
 			</div>	
- 
+
 	<?php $mb->the_group_close(); ?>
-    <?php endwhile; ?>
+	<?php endwhile; ?>
 
 	<p class="toolbar">
 		<a href="#" class="docopy-heros button">Add Hero</a>
