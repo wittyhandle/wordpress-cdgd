@@ -12,6 +12,9 @@
 
 		<div class="fields-block">
 			<?php echo $wpalchemy_media_access->getButton(array('label' => 'Select Grid Image')); ?>
+
+			<?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value(), 'type' => 'hidden', 'class' => 'image_holder')); ?>
+
 			<p class="image-label"><?php 
 				$image_path = $mb->get_the_value();
 				if (empty($image_path))
