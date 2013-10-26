@@ -21,6 +21,8 @@
 				<p><?php echo $wpalchemy_media_access->getButton(array('label' => 'Select Hero Image')); ?></p>
 				<p class="remove"><a href="#" class="dodelete button">Remove</a></p>
 
+				<?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value(), 'type' => 'hidden')); ?>
+
 				<p class="image-label"><?php 
 					$image_path = $mb->get_the_value();
 					if (empty($image_path))

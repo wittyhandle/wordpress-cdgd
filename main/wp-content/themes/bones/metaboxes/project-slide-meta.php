@@ -12,7 +12,6 @@
 	</p>
 
 	<?php while($mb->have_fields_and_multi('slides')): ?>
-
 	<?php $mb->the_group_open(); ?>
 
 		<?php $mb->the_field('slide'); ?>
@@ -22,8 +21,11 @@
 				<p><?php echo $wpalchemy_media_access->getButton(array('label' => 'Select Slide Image')); ?></p>
 				<p class="remove"><a href="#" class="dodelete button">Remove</a></p>
 
+				<?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value(), 'type' => 'hidden')); ?>
+
 				<p class="image-label"><?php 
 					$image_path = $mb->get_the_value();
+					_log($image_path . '!!');
 					if (empty($image_path))
 					{
 						echo 'No Image Selected';
