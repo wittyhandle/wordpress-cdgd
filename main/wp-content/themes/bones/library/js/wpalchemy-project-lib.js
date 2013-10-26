@@ -19,11 +19,13 @@ jQuery(function($)
 					.attr('width', response[1])
 					.attr('height', response[2])
 					.fadeIn(300);
-					
-				var lastSlash = url.lastIndexOf('/');
-				var imageName = url.substring(lastSlash + 1);
 				
-				jQuery('p.image-label').html(imageName);
+				orig_url = that.parent().find('input.image_holder').val();
+				var lastSlash = orig_url.lastIndexOf('/');
+				var imageName = orig_url.substring(lastSlash + 1);
+				
+				that.parent().find('p.image-label')
+					.html(imageName);
 				
 			}, 'json');
 		
@@ -33,7 +35,7 @@ jQuery(function($)
 	jQuery('#wpa_loop-heros').sortable({
 		change: function()
 		{
-			jQuery('#save-warning').show();
+			jQuery('#save-warning-heros').show();
 		}
 	});
 	
@@ -41,7 +43,7 @@ jQuery(function($)
 	jQuery('#wpa_loop-slides').sortable({
 		change: function()
 		{
-			jQuery('#save-warning').show();
+			jQuery('#save-warning-slides').show();
 		}
 	});
 	

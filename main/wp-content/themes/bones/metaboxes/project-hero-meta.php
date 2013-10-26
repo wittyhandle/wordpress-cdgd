@@ -7,7 +7,7 @@
 		images, drag from the empty space within a hero image row and drop under or over another image.
 	</p>
 
-	<p id="save-warning">
+	<p class="save-warning" id="save-warning-heros">
 		Make sure to save the sort order!
 	</p>
 
@@ -21,7 +21,7 @@
 				<p><?php echo $wpalchemy_media_access->getButton(array('label' => 'Select Hero Image')); ?></p>
 				<p class="remove"><a href="#" class="dodelete button">Remove</a></p>
 
-				<?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value(), 'type' => 'hidden')); ?>
+				<?php echo $wpalchemy_media_access->getField(array('name' => $mb->get_the_name(), 'value' => $mb->get_the_value(), 'type' => 'hidden', 'class' => 'image_holder')); ?>
 
 				<p class="image-label"><?php 
 					$image_path = $mb->get_the_value();
