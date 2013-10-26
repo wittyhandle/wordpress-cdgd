@@ -12,12 +12,18 @@ jQuery(function($)
 			},
 			function( response ) {
 				
+				url = response[0];
 				// render the img tag
 				that.parent().find('img')
-					.attr('src', response[0])
+					.attr('src', url)
 					.attr('width', response[1])
 					.attr('height', response[2])
 					.fadeIn(300);
+					
+				var lastSlash = url.lastIndexOf('/');
+				var imageName = url.substring(lastSlash + 1);
+				
+				jQuery('p.image-label').html(imageName);
 				
 			}, 'json');
 		
