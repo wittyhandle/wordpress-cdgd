@@ -186,3 +186,5 @@ if(!function_exists('_log')){
     }
   }
 }
+
+add_filter ( 'user_can_richedit' , create_function ( '$a' , 'return false;' ) , 50 );
