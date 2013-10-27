@@ -428,7 +428,7 @@ $clientsForProjects = array();
 add_action('admin_menu', 'load_clients_for_projects');
 function load_clients_for_projects()
 {
-	global $pagenow;		
+	global $pagenow;
 	
 	$post_type = '';
 	if ($pagenow == 'edit.php' && isset($_REQUEST['post_type']))
@@ -458,26 +458,58 @@ function load_clients_for_projects()
 				wp_reset_postdata();
 			}
 			
-		endwhile;	
-		
+		endwhile;
+
 	}
+}
+
+add_filter('manage_project_posts_columns', 'add_touted_column');
+function add_touted_column($defaults)
+{
+	$defaults['touted'] = 'Touted';
+	return $defaults;
 }
 
 /*
  * functions to add new columns in the admin
  * 
 */
-add_filter('manage_project_posts_columns', 'add_client_column');
+//add_filter('manage_project_posts_columns', 'add_client_column');
 function add_client_column($defaults)
-{		
-	$defaults['client'] = 'Client';  
+{
+	$defaults['client'] = 'Client';
 	return $defaults;
 }
 
 /*
 * Custom column settings
 */
-add_action('manage_project_posts_custom_column', 'client_column_content', 10, 2);
+//add_action('manage_project_posts_custom_column', 'client_column_content', 10, 2);
+add_action('manage_project_posts_custom_column', 'touted_column_content', 10, 2);
+function touted_column_content($column_name, $postId)
+{	
+	if ($column_name == 'touted')
+	{
+		$post = get_post($postId);
+		$connected = new WP_Query( array(
+		  'connected_type' => 'touts_to_projects',
+		  'connected_items' => $post,
+		  'nopaging' => true,
+		) );
+		
+		if ( $connected->have_posts() )
+		{
+			echo "<strong>yes</strong>";
+		}
+		else
+		{
+			echo "<strong>no</strong>";
+		}
+		
+		wp_reset_postdata();
+	}
+}
+
 /*
  * If rendering the data for the client column, look up the client
  * value in the $clientsForProjects map built up from the load_clients_for_projects
@@ -491,7 +523,7 @@ function client_column_content($column_name, $postId)
 		if (isset($clientsForProjects[$postId])) 
 		{
 			echo $clientsForProjects[$postId];
-		}				
+		}
 	}
 }
 
@@ -516,7 +548,7 @@ function tout_column_content($column_name, $postId)
 		  'connected_type' => 'touts_to_projects',
 		  'connected_items' => $post,
 		  'nopaging' => true,
-		) );				
+		) );
 		
 		if ( $connected->have_posts() )
 		{

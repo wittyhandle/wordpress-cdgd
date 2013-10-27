@@ -10,8 +10,12 @@ function my_connection_types()
 			'show' => 'from',
 			'context' => 'side'
 		),
+		'admin_column' => 'from',
 		'title' => array(
 			'from' => 'Add a Client'
+		),
+		'from_labels' => array(
+			'column_title' => 'Client'
 		),
 		'to_labels' => array(
 			'singular_name' => 'Client',
