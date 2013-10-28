@@ -17,7 +17,7 @@ URL: http://themble.com/bones/
 
 // let's create the function for the custom type
 function add_custom_post_types() { 
-	register_post_type( 'project',	 	
+	register_post_type( 'project',
 		array( 'labels' => array(
 			'name' => __( 'Projects', 'bonestheme' ), /* This is the Title of the Group */
 			'singular_name' => __( 'Project', 'bonestheme' ), /* This is the individual type */
@@ -50,7 +50,7 @@ function add_custom_post_types() {
 	 	) /* end of options */
 	); /* end of register post type */	
 	
-	register_post_type( 'client',	 	
+	register_post_type( 'client',
 		array( 'labels' => array(
 			'name' => __( 'Clients', 'bonestheme' ), /* This is the Title of the Group */
 			'singular_name' => __( 'Client', 'bonestheme' ), /* This is the individual type */
@@ -83,7 +83,7 @@ function add_custom_post_types() {
 	 	) /* end of options */
 	); /* end of register post type */
 	
-	register_post_type( 'tout',	 	
+	register_post_type( 'tout',
 		array( 'labels' => array(
 			'name' => __( 'Touts', 'bonestheme' ), /* This is the Title of the Group */
 			'singular_name' => __( 'Tout', 'bonestheme' ), /* This is the individual type */
