@@ -31,6 +31,24 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 // styles in base.scss
 @import "base";
 
+@import "susy";
+  
+//this is the default number of columns
+$total-columns: 6; 
+ 
+//width of each column
+$column-width   : 178px; 
+ 
+//space between columns
+$gutter-width   : 15.40px; 
+ 
+//space on the right and left of the grid
+$grid-padding   : $gutter-width;
+ 
+//alternative layout breakpoints
+//$tablet: 8;
+//$computer: 65 12;
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's

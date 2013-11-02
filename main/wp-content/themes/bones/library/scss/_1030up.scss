@@ -2,9 +2,39 @@
 Site Name: 
 Author: 
 
-Stylesheet: Desktop Stylsheet
+Stylesheet: Desktop Stylesheet
 
 This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
+body {
+	
+	#container {
+		
+		@include container;
+		@include susy-grid-background;
+		
+		.foo {
+			@include span-columns(1);
+			background-color: green;
+			height: 20px
+		}
+		
+		
+		.big {
+			@include span-columns(4);
+			background-color: blue;
+			opacity: 0.2;
+			height: 50px;
+		}
+		
+		.tiny {
+			@include span-columns(1, 4);
+			background-color: red;
+			height: 50px;
+			color: black;
+		}
+	}
+	
+}
