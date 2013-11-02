@@ -15,6 +15,49 @@ body {
 		@include container;
 		@include susy-grid-background;
 		
+		margin-top: 10px;
+		margin-bottom: 10px;
+		
+		header {
+			
+			position: relative;
+			margin-bottom: 10px;
+			
+			a {
+				margin: 0;
+				padding: 0;
+				
+				img {
+					float: left;
+				}
+			}
+			
+			nav {
+				
+				float: right;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				
+				ul {
+					
+					margin: 0;
+					
+					li {
+						float: left;
+						margin-left: 4px;
+						font-size: 11px;
+						font-family: 'NHaasGroteskTXStd-75Bd';
+						line-height: 9px;
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						word-spacing: 1px;
+					}
+				}
+				
+			}
+		}
+		
 		.foo {
 			@include span-columns(1);
 			background-color: green;

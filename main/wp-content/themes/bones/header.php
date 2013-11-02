@@ -1,10 +1,16 @@
-<header>
-	icon
+<header class="clearfix">
+	<a href="<?php echo home_url(); ?>">
+		<img src="<?php bloginfo('template_directory'); ?>/library/images/icons/logo.png" />
+	</a>
 	<nav id="menu">
 		<ul>
-			<li>Foo</li>
+			<li>About</li>
 			<li>/</li>
-			<li>Bar</li>
+			<li>Work</li>
+			<li>/</li>
+			<li>News</li>
+			<li>/</li>
+			<li>Contact</li>
 		</ul>
 	</nav>
 </header>
