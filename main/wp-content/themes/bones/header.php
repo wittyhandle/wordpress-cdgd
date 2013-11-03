@@ -7,15 +7,7 @@
 				<a href="<?php echo home_url(); ?>">
 					<img src="<?php bloginfo('template_directory'); ?>/library/images/icons/logo.png" />
 				</a>
-				<nav id="menu">
-					<ul>
-						<li><a href="#">About</a></li>
-						<li>/</li>
-						<li><a href="#">Work</a></li>
-						<li>/</li>
-						<li><a href="#">News</a></li>
-						<li>/</li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</nav>
+				
+				<?php wp_nav_menu( 'container=nav&container_id=menu&after=<span>/</span>' ); ?>
+				
 			</header>

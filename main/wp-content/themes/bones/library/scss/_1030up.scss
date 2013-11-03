@@ -54,7 +54,7 @@ body {
 					
 					margin: 0;
 					
-					li {
+					li, span {
 						float: left;
 						margin-left: 4px;
 						font-size: 11px;
@@ -63,6 +63,19 @@ body {
 						text-transform: uppercase;
 						letter-spacing: 1px;
 						word-spacing: 1px;
+						
+						span {
+							float: none;
+							color: #a0a0a0;
+						}
+					}
+					
+					li {
+						&:last-child {
+							span {
+								display: none;
+							}
+				        }
 					}
 				}
 				

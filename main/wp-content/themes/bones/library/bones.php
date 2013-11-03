@@ -229,6 +229,32 @@ function bones_theme_support() {
 /*********************
 MENUS & NAVIGATION
 *********************/
+add_filter( 'nav_menu_css_class', 'highlight_parent_nav_item', 10, 2 );
+function highlight_parent_nav_item( $classes, $item ) 
+{
+	global $wp;
+	$qs = $wp->query_string;
+	parse_str($qs, $out);
+	
+	$post_type = $out['post_type'];
+	$menu_name = $item->title;
+	
+	switch($menu_name)
+	{
+		case "Work":
+			if ($post_type == 'project')
+			{
+				$classes[] = 'special-class';
+				return $classes;
+			}
+			break;
+		case "About":
+			break;
+	}
+	
+	return $item->classes;
+}
+
 
 // the main menu
 function bones_main_nav() {

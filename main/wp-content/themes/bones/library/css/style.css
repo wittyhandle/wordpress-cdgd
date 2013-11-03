@@ -1650,7 +1650,7 @@ you can add resource intensive styles.
         body #container header nav ul {
           margin: 0; }
           /* line 57, ../scss/_1030up.scss */
-          body #container header nav ul li {
+          body #container header nav ul li, body #container header nav ul span {
             float: left;
             margin-left: 4px;
             font-size: 11px;
@@ -1659,20 +1659,27 @@ you can add resource intensive styles.
             text-transform: uppercase;
             letter-spacing: 1px;
             word-spacing: 1px; }
-    /* line 74, ../scss/_1030up.scss */
+            /* line 67, ../scss/_1030up.scss */
+            body #container header nav ul li span, body #container header nav ul span span {
+              float: none;
+              color: #a0a0a0; }
+          /* line 75, ../scss/_1030up.scss */
+          body #container header nav ul li:last-child span {
+            display: none; }
+    /* line 87, ../scss/_1030up.scss */
     body #container .project-details {
       margin-top: 30px; }
-      /* line 77, ../scss/_1030up.scss */
+      /* line 90, ../scss/_1030up.scss */
       body #container .project-details img {
         margin-bottom: 30px; }
-    /* line 83, ../scss/_1030up.scss */
+    /* line 96, ../scss/_1030up.scss */
     body #container #menu_details {
       float: left;
       width: 15.58277%;
       float: left;
       margin-right: 1.30068%;
       display: inline; }
-    /* line 88, ../scss/_1030up.scss */
+    /* line 101, ../scss/_1030up.scss */
     body #container #heros {
       float: right;
       width: 66.23311%;
