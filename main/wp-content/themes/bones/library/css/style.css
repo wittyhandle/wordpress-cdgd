@@ -1631,24 +1631,25 @@ you can add resource intensive styles.
     /* line 31, ../scss/_1030up.scss */
     body #container header {
       position: relative;
-      margin-bottom: 10px; }
-      /* line 36, ../scss/_1030up.scss */
+      padding-bottom: 10px;
+      border-bottom: 7px solid #000; }
+      /* line 37, ../scss/_1030up.scss */
       body #container header a {
         margin: 0;
         padding: 0; }
-        /* line 40, ../scss/_1030up.scss */
+        /* line 41, ../scss/_1030up.scss */
         body #container header a img {
           float: left; }
-      /* line 45, ../scss/_1030up.scss */
+      /* line 46, ../scss/_1030up.scss */
       body #container header nav {
         float: right;
         position: absolute;
         right: 0;
-        bottom: 0; }
-        /* line 52, ../scss/_1030up.scss */
+        bottom: 10px; }
+        /* line 53, ../scss/_1030up.scss */
         body #container header nav ul {
           margin: 0; }
-          /* line 56, ../scss/_1030up.scss */
+          /* line 57, ../scss/_1030up.scss */
           body #container header nav ul li {
             float: left;
             margin-left: 4px;
@@ -1658,32 +1659,27 @@ you can add resource intensive styles.
             text-transform: uppercase;
             letter-spacing: 1px;
             word-spacing: 1px; }
-    /* line 71, ../scss/_1030up.scss */
-    body #container .foo {
+    /* line 74, ../scss/_1030up.scss */
+    body #container .project-details {
+      margin-top: 30px; }
+      /* line 77, ../scss/_1030up.scss */
+      body #container .project-details img {
+        margin-bottom: 30px; }
+    /* line 83, ../scss/_1030up.scss */
+    body #container #menu_details {
+      float: left;
       width: 15.58277%;
       float: left;
       margin-right: 1.30068%;
-      display: inline;
-      background-color: green;
-      height: 20px; }
-    /* line 78, ../scss/_1030up.scss */
-    body #container .big {
+      display: inline; }
+    /* line 88, ../scss/_1030up.scss */
+    body #container #heros {
+      float: right;
       width: 66.23311%;
-      float: left;
-      margin-right: 1.30068%;
-      display: inline;
-      background-color: blue;
-      opacity: 0.2;
-      height: 50px; }
-    /* line 85, ../scss/_1030up.scss */
-    body #container .tiny {
-      width: 23.52716%;
-      float: left;
-      margin-right: 1.96378%;
-      display: inline;
-      background-color: red;
-      height: 50px;
-      color: black; } }
+      float: right;
+      margin-right: 0;
+      *margin-left: -15.4px;
+      display: inline; } }
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.

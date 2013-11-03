@@ -22,7 +22,7 @@ body {
 	
 	#container {
 		
-		@include container;
+		@include container();
 		//@include susy-grid-background;
 		
 		margin-top: 10px;
@@ -31,7 +31,8 @@ body {
 		header {
 			
 			position: relative;
-			margin-bottom: 10px;
+			padding-bottom: 10px;
+			border-bottom: 7px solid #000;
 			
 			a {
 				margin: 0;
@@ -47,7 +48,7 @@ body {
 				float: right;
 				position: absolute;
 				right: 0;
-				bottom: 0;
+				bottom: 10px;
 				
 				ul {
 					
@@ -68,25 +69,25 @@ body {
 			}
 		}
 		
-		.foo {
+		$hero-margin: 30px;
+		
+		.project-details {
+			margin-top: $hero-margin;
+			
+			img {
+				margin-bottom: $hero-margin;
+			}
+			
+		}
+		
+		#menu_details {
+			float: left;
 			@include span-columns(1);
-			background-color: green;
-			height: 20px
 		}
 		
-		
-		.big {
-			@include span-columns(4);
-			background-color: blue;
-			opacity: 0.2;
-			height: 50px;
-		}
-		
-		.tiny {
-			@include span-columns(1, 4);
-			background-color: red;
-			height: 50px;
-			color: black;
+		#heros {
+			float: right;
+			@include span-columns(4 omega);
 		}
 	}
 	
