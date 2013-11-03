@@ -41,7 +41,7 @@ function add_custom_post_types() {
 			'query_var' => true,
 			'menu_position' => 4, /* this is what order you want it to appear in on the left hand side menu */ 
 			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/icons/application-wave.png', /* the icon for the custom post type menu */
-			'rewrite'	=> array( 'slug' => 'project', 'with_front' => false ), /* you can specify its url slug */
+			'rewrite'	=> array( 'slug' => 'work', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'projects',
 			'capability_type' => 'page',
 			'hierarchical' => false,
