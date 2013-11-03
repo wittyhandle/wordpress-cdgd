@@ -8,12 +8,22 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
+a, a:active, a:visited {
+	color: #a0a0a0;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+}
+
 body {
+	
 	
 	#container {
 		
 		@include container;
-		@include susy-grid-background;
+		//@include susy-grid-background;
 		
 		margin-top: 10px;
 		margin-bottom: 10px;

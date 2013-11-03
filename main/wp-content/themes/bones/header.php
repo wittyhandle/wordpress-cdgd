@@ -4,13 +4,13 @@
 	</a>
 	<nav id="menu">
 		<ul>
-			<li>About</li>
+			<li><a href="#">About</a></li>
 			<li>/</li>
-			<li>Work</li>
+			<li><a href="#">Work</a></li>
 			<li>/</li>
-			<li>News</li>
+			<li><a href="#">News</a></li>
 			<li>/</li>
-			<li>Contact</li>
+			<li><a href="#">Contact</a></li>
 		</ul>
 	</nav>
 </header>
