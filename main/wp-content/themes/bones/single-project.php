@@ -2,9 +2,16 @@
 
 <div class="clearfix project-details">
 	
-	<div id="menu_details">
-		left
-	</div>
+	<nav id="menu_details">
+		<?php 
+			$cats = get_the_terms( get_the_ID(), 'project_category' );
+			if ($cats)
+			{
+				$cat = array_pop($cats);
+				echo sprintf('<h1>%s</h1>', $cat->name);
+			}
+		?>
+	</nav>
 
 	<div id="heros">
 		<?php
