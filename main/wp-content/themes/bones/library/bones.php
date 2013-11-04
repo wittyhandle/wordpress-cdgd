@@ -244,7 +244,7 @@ function highlight_parent_nav_item( $classes, $item )
 		case "Work":
 			if ($post_type == 'project')
 			{
-				$classes[] = 'special-class';
+				$classes[] = 'current-menu-item';
 				return $classes;
 			}
 			break;

@@ -1666,20 +1666,23 @@ you can add resource intensive styles.
           /* line 75, ../scss/_1030up.scss */
           body #container header nav ul li:last-child span {
             display: none; }
-    /* line 87, ../scss/_1030up.scss */
+          /* line 82, ../scss/_1030up.scss */
+          body #container header nav ul li.current-menu-item a {
+            color: #000; }
+    /* line 93, ../scss/_1030up.scss */
     body #container .project-details {
       margin-top: 30px; }
-      /* line 90, ../scss/_1030up.scss */
+      /* line 96, ../scss/_1030up.scss */
       body #container .project-details img {
         margin-bottom: 30px; }
-    /* line 96, ../scss/_1030up.scss */
+    /* line 102, ../scss/_1030up.scss */
     body #container #menu_details {
       float: left;
       width: 15.58277%;
       float: left;
       margin-right: 1.30068%;
       display: inline; }
-    /* line 101, ../scss/_1030up.scss */
+    /* line 107, ../scss/_1030up.scss */
     body #container #heros {
       float: right;
       width: 66.23311%;
