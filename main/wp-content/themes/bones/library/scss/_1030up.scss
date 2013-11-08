@@ -98,24 +98,55 @@ body {
 			img {
 				margin-bottom: $hero-margin;
 			}
-			
-			
+
 			#menu_details {
 				float: left;
 				@include span-columns(1);
 				padding-top: 130px;
 				
 				h1 {
+					font-family: $fancy-bld;
 					font-size: 16px;
 					font-weight: bold;
 					line-height: 19px;
-					padding-bottom: 6px;
+					padding-bottom: 5.9px;
 					padding-top: 0px;
 					margin: 0px;
 					color: #000;
-					font-family: $fancy-bld;
 					border-bottom: 1px solid #000;
 				}
+				
+				div {
+					font-family: $fancy-bld;
+					margin-top: 3px;
+					letter-spacing: 1px;
+					font-size: 13px;
+					padding: 4.8px 0;
+					border-bottom: 1px solid #000;
+				}
+				
+				.arrow-right {
+					margin-top: 1px;
+					display: block;
+					float: right;
+					width: 0;
+					height: 0;
+					border-top: 5px solid transparent;
+					border-bottom: 5px solid transparent;
+					border-left: 5px solid black;
+				}
+
+				.arrow-left {
+					margin-top: .65px;
+					display: block;
+					float: right;
+					width: 0;
+					height: 0;
+					border-top: 5px solid transparent;
+					border-bottom: 5px solid transparent;
+					border-right: 5px solid black;
+				}
+				
 			}
 		
 			#heros {

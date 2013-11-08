@@ -632,7 +632,7 @@ body #container {
     /* line 98, ../scss/_1030up.scss */
     body #container .project-details img {
       margin-bottom: 30px; }
-    /* line 103, ../scss/_1030up.scss */
+    /* line 102, ../scss/_1030up.scss */
     body #container .project-details #menu_details {
       float: left;
       width: 6.77966%;
@@ -640,18 +640,46 @@ body #container {
       margin-right: 1.69492%;
       display: inline;
       padding-top: 130px; }
-      /* line 108, ../scss/_1030up.scss */
+      /* line 107, ../scss/_1030up.scss */
       body #container .project-details #menu_details h1 {
+        font-family: "NHaasGroteskTXStd-75Bd";
         font-size: 16px;
         font-weight: bold;
         line-height: 19px;
-        padding-bottom: 6px;
+        padding-bottom: 5.9px;
         padding-top: 0px;
         margin: 0px;
         color: #000;
-        font-family: "NHaasGroteskTXStd-75Bd";
         border-bottom: 1px solid #000; }
-    /* line 121, ../scss/_1030up.scss */
+      /* line 119, ../scss/_1030up.scss */
+      body #container .project-details #menu_details div {
+        font-family: "NHaasGroteskTXStd-75Bd";
+        margin-top: 3px;
+        letter-spacing: 1px;
+        font-size: 13px;
+        padding: 4.8px 0;
+        border-bottom: 1px solid #000; }
+      /* line 128, ../scss/_1030up.scss */
+      body #container .project-details #menu_details .arrow-right {
+        margin-top: 1px;
+        display: block;
+        float: right;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid black; }
+      /* line 139, ../scss/_1030up.scss */
+      body #container .project-details #menu_details .arrow-left {
+        margin-top: .65px;
+        display: block;
+        float: right;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid black; }
+    /* line 152, ../scss/_1030up.scss */
     body #container .project-details #heros {
       float: right;
       width: 32.20339%;
