@@ -236,23 +236,32 @@ function highlight_parent_nav_item( $classes, $item )
 	$qs = $wp->query_string;
 	parse_str($qs, $out);
 	
-	$post_type = $out['post_type'];
-	$menu_name = $item->title;
-	
-	switch($menu_name)
+	if (isset($out['post_type']))
 	{
-		case "Work":
-			if ($post_type == 'project')
-			{
-				$classes[] = 'current-menu-item';
-				return $classes;
-			}
-			break;
-		case "About":
-			break;
+		$post_type = $out['post_type'];
+		$menu_name = $item->title;
+
+		switch($menu_name)
+		{
+			case "Work":
+				if ($post_type == 'project')
+				{
+					$classes[] = 'current-menu-item';
+					return $classes;
+				}
+				break;
+			case "About":
+				break;
+		}
+
+		return $item->classes;
+	}
+	else
+	{
+		return $classes;
 	}
 	
-	return $item->classes;
+
 }
 
 
