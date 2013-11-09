@@ -139,7 +139,7 @@ function add_custom_post_types() {
     		'show_admin_column' => true, 
     		'show_ui' => true,
     		'query_var' => true,
-    		'rewrite' => array( 'slug' => 'project-slug' ),
+    		'rewrite' => array( 'slug' => 'work_type' ),
     	)
     );    	        	
 ?>
