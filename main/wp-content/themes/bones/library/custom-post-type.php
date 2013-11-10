@@ -50,6 +50,8 @@ function add_custom_post_types() {
 	 	) /* end of options */
 	); /* end of register post type */	
 	
+	register_taxonomy_for_object_type( 'category', 'project' );
+	
 	register_post_type( 'client',
 		array( 'labels' => array(
 			'name' => __( 'Clients', 'bonestheme' ), /* This is the Title of the Group */
@@ -120,26 +122,4 @@ function add_custom_post_types() {
 
 	// adding the function to the Wordpress init
 	add_action( 'init', 'add_custom_post_types');
-		
-    register_taxonomy( 'project_category', 
-    	array('project'),
-    	array('hierarchical' => true,
-    		'labels' => array(
-    			'name' => __( 'Project Categories', 'bonestheme' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Project Category', 'bonestheme' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Project Categories', 'bonestheme' ), /* search title for taxomony */
-    			'all_items' => __( 'All Project Categories', 'bonestheme' ), /* all title for taxonomies */
-    			'parent_item' => __( 'Parent Project Category', 'bonestheme' ), /* parent title for taxonomy */
-    			'parent_item_colon' => __( 'Parent Project Category:', 'bonestheme' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Project Category', 'bonestheme' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Project Category', 'bonestheme' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Project Category', 'bonestheme' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Project Category Name', 'bonestheme' ) /* name title for taxonomy */
-    		),
-    		'show_admin_column' => true, 
-    		'show_ui' => true,
-    		'query_var' => true,
-    		'rewrite' => array( 'slug' => 'work_type' ),
-    	)
-    );    	        	
 ?>

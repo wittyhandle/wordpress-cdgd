@@ -4,7 +4,7 @@
 	
 	<nav id="menu_details">
 		<?php 
-			$cats = get_the_terms( get_the_ID(), 'project_category' );
+			$cats = get_the_category();
 			if ($cats)
 			{
 				$cat = array_pop($cats);
@@ -23,14 +23,13 @@
 			echo '</div>';
 			
 			echo '<div>';
-			echo 'View All ';
-			//$cat = array_pop($cats);
+			echo '<a href="#">View All ';
 			echo $cat->name;
-			echo '</div>';
+			echo '</a></div>';
 		?>
 		
 		<div>
-			View All
+			<a href="#">View All</a>
 		</div>
 		
 	</nav>
