@@ -22,7 +22,8 @@ add_action( 'after_setup_theme', 'bones_ahoy', 16 );
 function bones_ahoy() {
 
     // launching operation cleanup
-    add_action( 'init', 'bones_head_cleanup' );	
+    add_action( 'init', 'bones_head_cleanup' );
+	add_action( 'init', 'wire_alternate_pdp_url' );
 
     // remove WP version from RSS
     add_filter( 'the_generator', 'bones_rss_version' );
@@ -59,6 +60,23 @@ a mess. Let's clean it up by
 removing all the junk we don't
 need.
 *********************/
+
+function wire_alternate_pdp_url()
+{
+	global $wp,$wp_rewrite;
+	$wp->add_query_var('mode');
+	//add_rewrite_rule('^work/all/([^/]*)/([^/]*)/?', 'index.php?pagename=$matches[2]&mode=all', 'top');
+	add_rewrite_rule('work/all/([^/]*)/([^/]*)/?', 'index.php?post_type=project&name=$matches[2]&mode=all', 'top');
+	
+	// global $wp,$wp_rewrite;
+	// 
+	// $wp->add_query_var('mode');
+	// $wp_rewrite->add_rule('work/all/([^/]*)/([^/]*)/?', 'index.php?post_type=project&name=$matches[2]&mode=all', 'top');
+	// 
+	// Once you get working, remove this next line
+	//$wp_rewrite->flush_rules(false);
+	
+}
 
 function bones_head_cleanup() {
 	// category feeds
