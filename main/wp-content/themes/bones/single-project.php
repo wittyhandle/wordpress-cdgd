@@ -13,25 +13,47 @@
 			}
 			
 			echo '<div>';
-			next_post_link_plus(array(
+			
+			$next_link = next_post_link_plus(array(
 				'order_by' => 'menu_order',
 				'link' => 'View Next',
 				'format' => '%link',
 				'in_same_cat' => $mode != 'all',
-				'loop' => true
+				'loop' => true,
+				'return' => 'output'
 			));
+			
+			if ('all' == $mode)
+			{
+				echo str_replace('/work/', '/work/all/', $next_link);
+			}
+			else
+			{
+				echo $next_link;
+			}
 			
 			echo '<span class="arrow-right"></span>';
 			echo '</div>';
 			
 			echo '<div>';
-			previous_post_link_plus(array(
+			$prev_link = previous_post_link_plus(array(
 				'order_by' => 'menu_order',
 				'link' => 'View Previous',
 				'format' => '%link',
 				'in_same_cat' => $mode != 'all',
-				'loop' => true
+				'loop' => true,
+				'return' => 'output'
 			));
+			
+			if ('all' == $mode)
+			{
+				echo str_replace('/work/', '/work/all/', $prev_link);
+			}
+			else
+			{
+				echo $prev_link;
+			}
+			
 			echo '<span class="arrow-left"></span>';
 			echo '</div>';
 			
