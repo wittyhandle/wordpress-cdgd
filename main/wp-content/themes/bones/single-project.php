@@ -1,13 +1,10 @@
 <?php get_header(); ?>
-<?php 
-	$mode = get_query_var('mode');
-	echo $mode . ' <--';
-?>
 <div class="clearfix project-details">
 	
 	<nav id="menu_details">
 		<?php 
 			$cats = get_the_category();
+			$mode = get_query_var('mode');
 			if ($cats)
 			{
 				$cat = array_pop($cats);
@@ -16,12 +13,25 @@
 			}
 			
 			echo '<div>';
-			next_post_link("%link", "View Next", true);
+			next_post_link_plus(array(
+				'order_by' => 'menu_order',
+				'link' => 'View Next',
+				'format' => '%link',
+				'in_same_cat' => $mode != 'all',
+				'loop' => true
+			));
+			
 			echo '<span class="arrow-right"></span>';
 			echo '</div>';
 			
 			echo '<div>';
-			previous_post_link("%link", "View Previous", true);
+			previous_post_link_plus(array(
+				'order_by' => 'menu_order',
+				'link' => 'View Previous',
+				'format' => '%link',
+				'in_same_cat' => $mode != 'all',
+				'loop' => true
+			));
 			echo '<span class="arrow-left"></span>';
 			echo '</div>';
 			
