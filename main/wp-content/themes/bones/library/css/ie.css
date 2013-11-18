@@ -567,7 +567,7 @@ a, a:active, a:visited {
 
 /* line 18, ../scss/_1030up.scss */
 a:hover {
-  color: #000; }
+  color: #000 !important; }
 
 /* line 25, ../scss/_1030up.scss */
 body #container {
