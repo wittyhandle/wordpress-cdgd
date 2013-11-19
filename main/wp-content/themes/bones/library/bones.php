@@ -65,17 +65,7 @@ function wire_alternate_pdp_url()
 {
 	global $wp,$wp_rewrite;
 	$wp->add_query_var('mode');
-	//add_rewrite_rule('^work/all/([^/]*)/([^/]*)/?', 'index.php?pagename=$matches[2]&mode=all', 'top');
 	add_rewrite_rule('work/all/([^/]*)/([^/]*)/?', 'index.php?post_type=project&name=$matches[2]&mode=all', 'top');
-	
-	// global $wp,$wp_rewrite;
-	// 
-	// $wp->add_query_var('mode');
-	// $wp_rewrite->add_rule('work/all/([^/]*)/([^/]*)/?', 'index.php?post_type=project&name=$matches[2]&mode=all', 'top');
-	// 
-	// Once you get working, remove this next line
-	//$wp_rewrite->flush_rules(false);
-	
 }
 
 function bones_head_cleanup() {
