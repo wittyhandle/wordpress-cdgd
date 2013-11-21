@@ -67,6 +67,29 @@
 			<a href="#">View All</a>
 		</div>
 		
+		<div class="work-detail">
+		
+			<?
+				$connected = new WP_Query( array(
+				  'connected_type' => 'projects_to_clients',
+				  'connected_items' => get_queried_object(),
+				  'nopaging' => true,
+				));
+				
+				
+			?>
+				
+			<? while ( $connected->have_posts() ) : $connected->the_post(); ?>
+				<p class="client"><? the_title(); ?></p>
+			<? 
+				endwhile;
+				wp_reset_postdata();
+			?>
+			
+			<p class="title"><? the_title(); ?></p>
+			<? the_content(); ?>
+		</div>
+		
 	</nav>
 
 	<div id="heros">

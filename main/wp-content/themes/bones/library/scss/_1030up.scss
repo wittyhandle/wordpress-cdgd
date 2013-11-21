@@ -9,6 +9,7 @@ be seen on the Desktop.
 
 ******************************************************************/
 $fancy-bld: 'NHaasGroteskTXStd-75Bd';
+$fancy-reg: 'NHaasGroteskTXStd-55Rg';
 
 a, a:active, a:visited {
 	color: #a0a0a0;
@@ -146,6 +147,29 @@ body {
 					border-bottom: 5px solid transparent;
 					border-right: 5px solid black;
 				}
+				
+				.work-detail {
+				
+					border: none;
+					margin-top: 60px;
+				
+					p {
+						font-family: $fancy-bld;
+						font-size: 16px;
+						margin: 0;
+						line-height: 19px;
+						color: #000;
+					}
+					
+				}
+				
+				.work-detail > p:last-of-type{
+		 			font-family: $fancy-reg;
+					color: #a0a0a0;
+					font-size: 13px;
+					letter-spacing: 1px;
+					line-height: 15px;
+				 }
 				
 			}
 		

@@ -560,16 +560,16 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
-/* line 13, ../scss/_1030up.scss */
+/* line 14, ../scss/_1030up.scss */
 a, a:active, a:visited {
   color: #a0a0a0;
   text-decoration: none; }
 
-/* line 18, ../scss/_1030up.scss */
+/* line 19, ../scss/_1030up.scss */
 a:hover {
   color: #000 !important; }
 
-/* line 25, ../scss/_1030up.scss */
+/* line 26, ../scss/_1030up.scss */
 body #container {
   *zoom: 1;
   max-width: 59em;
@@ -585,28 +585,28 @@ body #container {
     content: "";
     display: table;
     clear: both; }
-  /* line 33, ../scss/_1030up.scss */
+  /* line 34, ../scss/_1030up.scss */
   body #container header {
     position: relative;
     padding-bottom: 10px;
     border-bottom: 7px solid #000; }
-    /* line 39, ../scss/_1030up.scss */
+    /* line 40, ../scss/_1030up.scss */
     body #container header a {
       margin: 0;
       padding: 0; }
-      /* line 43, ../scss/_1030up.scss */
+      /* line 44, ../scss/_1030up.scss */
       body #container header a img {
         float: left; }
-    /* line 48, ../scss/_1030up.scss */
+    /* line 49, ../scss/_1030up.scss */
     body #container header nav {
       float: right;
       position: absolute;
       right: 0;
       bottom: 10px; }
-      /* line 55, ../scss/_1030up.scss */
+      /* line 56, ../scss/_1030up.scss */
       body #container header nav ul {
         margin: 0; }
-        /* line 59, ../scss/_1030up.scss */
+        /* line 60, ../scss/_1030up.scss */
         body #container header nav ul li, body #container header nav ul span {
           float: left;
           margin-left: 4px;
@@ -616,23 +616,23 @@ body #container {
           text-transform: uppercase;
           letter-spacing: 1px;
           word-spacing: 1px; }
-          /* line 69, ../scss/_1030up.scss */
+          /* line 70, ../scss/_1030up.scss */
           body #container header nav ul li span, body #container header nav ul span span {
             float: none;
             color: #a0a0a0; }
-        /* line 77, ../scss/_1030up.scss */
+        /* line 78, ../scss/_1030up.scss */
         body #container header nav ul li:last-child span {
           display: none; }
-        /* line 84, ../scss/_1030up.scss */
+        /* line 85, ../scss/_1030up.scss */
         body #container header nav ul li.current-menu-item a {
           color: #000; }
-  /* line 95, ../scss/_1030up.scss */
+  /* line 96, ../scss/_1030up.scss */
   body #container .project-details {
     margin-top: 30px; }
-    /* line 98, ../scss/_1030up.scss */
+    /* line 99, ../scss/_1030up.scss */
     body #container .project-details img {
       margin-bottom: 30px; }
-    /* line 102, ../scss/_1030up.scss */
+    /* line 103, ../scss/_1030up.scss */
     body #container .project-details #menu_details {
       float: left;
       width: 6.77966%;
@@ -640,7 +640,7 @@ body #container {
       margin-right: 1.69492%;
       display: inline;
       padding-top: 130px; }
-      /* line 107, ../scss/_1030up.scss */
+      /* line 108, ../scss/_1030up.scss */
       body #container .project-details #menu_details h1 {
         font-family: "NHaasGroteskTXStd-75Bd";
         font-size: 16px;
@@ -651,7 +651,7 @@ body #container {
         margin: 0px;
         color: #000;
         border-bottom: 1px solid #000; }
-      /* line 119, ../scss/_1030up.scss */
+      /* line 120, ../scss/_1030up.scss */
       body #container .project-details #menu_details div {
         font-family: "NHaasGroteskTXStd-75Bd";
         margin-top: 3px;
@@ -659,7 +659,7 @@ body #container {
         font-size: 13px;
         padding: 4.8px 0;
         border-bottom: 1px solid #000; }
-      /* line 128, ../scss/_1030up.scss */
+      /* line 129, ../scss/_1030up.scss */
       body #container .project-details #menu_details .arrow-right {
         margin-top: 1px;
         display: block;
@@ -669,7 +669,7 @@ body #container {
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
         border-left: 5px solid black; }
-      /* line 139, ../scss/_1030up.scss */
+      /* line 140, ../scss/_1030up.scss */
       body #container .project-details #menu_details .arrow-left {
         margin-top: .65px;
         display: block;
@@ -679,7 +679,25 @@ body #container {
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
         border-right: 5px solid black; }
-    /* line 152, ../scss/_1030up.scss */
+      /* line 151, ../scss/_1030up.scss */
+      body #container .project-details #menu_details .work-detail {
+        border: none;
+        margin-top: 60px; }
+        /* line 156, ../scss/_1030up.scss */
+        body #container .project-details #menu_details .work-detail p {
+          font-family: "NHaasGroteskTXStd-75Bd";
+          font-size: 16px;
+          margin: 0;
+          line-height: 19px;
+          color: #000; }
+      /* line 166, ../scss/_1030up.scss */
+      body #container .project-details #menu_details .work-detail > p:last-of-type {
+        font-family: "NHaasGroteskTXStd-55Rg";
+        color: #a0a0a0;
+        font-size: 13px;
+        letter-spacing: 1px;
+        line-height: 15px; }
+    /* line 176, ../scss/_1030up.scss */
     body #container .project-details #heros {
       float: right;
       width: 32.20339%;
